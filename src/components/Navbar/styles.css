@@ -1,0 +1,15 @@
+.nav_bar{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 20px;
+}
+
+.brand {
+  display: flex;
+}
+
+.link{}
+
+.title {
+  font-size: 1.5em;
+  margin-left: 16px;
+}

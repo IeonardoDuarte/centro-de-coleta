@@ -1,0 +1,23 @@
+
+.login_form {
+  width: 100%;
+  max-width: 400px;
+  margin: 160px auto 0;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup{
+  margin-top: 1rem;
+  text-align: center;
+}

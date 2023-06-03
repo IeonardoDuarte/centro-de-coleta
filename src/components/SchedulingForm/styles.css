@@ -1,7 +1,7 @@
 .scheduling_form {
   width: 100%;
   max-width: 400px;
-  margin: 160px auto 0;
+  margin: 160px auto 40px;
   padding: 0 1rem;
 }
 
@@ -14,4 +14,16 @@
 .form {
   display: flex;
   flex-direction: column;
+}
+
+.select {
+  margin-bottom: 1rem;
+}
+
+.select .input{
+  margin-left: 1rem;
+}
+
+.date_picker{
+  margin-bottom: 1rem;
 }

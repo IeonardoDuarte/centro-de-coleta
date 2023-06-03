@@ -1,5 +1,7 @@
 import Button from "../Button";
 import Input from "../Input";
+import RadioInput from "../RadioInput";
+import RadioInputGroup from "../RadioInputGroup";
 import "./styles.css";
 
 export default function SchedulingForm() {
@@ -8,20 +10,10 @@ export default function SchedulingForm() {
       <div className="scheduling_form">
         <h1 className="title">Agendamento</h1>
         <form className="form">
-          <fieldset className="input_group">
-            <legend className="label">Tipo de coleta:</legend>
-            <div className="radio_group">
-              <input id="reciclaveis" className="input" type="radio" name="coleta" value="reciclavel" />
-              <label for="reciclaveis" className="label">Reciclável</label>
-            </div>
-            <div className="radio_group">
-              <input id="organicos" className="input" type="radio" name="coleta" value="alimento" />
-              <label for="organicos" className="label">Alimento</label>
-            </div>
-          </fieldset>
+          <RadioInputGroup />
           <Input label="CEP:" />
           <Input label="Endereço:" />
-          <div>
+          <div className="select">
             <label className="label">Estado</label>
             <select className="input">
               <option value="0">Selecione um estado</option>
@@ -30,7 +22,7 @@ export default function SchedulingForm() {
               <option value="3">Minas Gerais</option>
             </select>
           </div>
-          <div>
+          <div className="select">
             <label className="label">Cidade</label>
             <select className="input">
               <option value="0">Selecione uma cidade</option>
@@ -39,8 +31,10 @@ export default function SchedulingForm() {
               <option value="3">Minas Gerais</option>
             </select>
           </div>
-          <label for="pickupDate">Data da coleta:</label>
-          <input type="date" id="pickupDate" name="pickupDate"></input>
+          <div className="date_picker">
+            <label for="pickupDate">Data da coleta:</label>
+            <input type="date" id="pickupDate" name="pickupDate"></input>
+          </div>
           <Button label="Agendar" />
         </form>
       </div>

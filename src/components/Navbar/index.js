@@ -7,7 +7,7 @@ export default function Navbar() {
       <nav className="nav_bar">
         <div className="brand">
           <a className="link">
-            <Image src="Logo.svg" width={45} height={45} />
+            <Image src="Logo.svg" width={45} height={45} alt="Icone do centro de coleta sustentável" />
             <span className="title">Centro de coleta sustentável</span>
           </a>  
         </div>

@@ -1,67 +1,34 @@
+'use client';
+import { useState } from "react";
 import Button from "../Button";
 import Input from "../Input";
 import "./styles.css";
+import { signInWithGoogle } from "../../../util/loginWithGoogle";
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email);
+  }
+
   return (
     <>
       <div className="login_form">
         <h1 className="title">Login</h1>
-        <form className="form">
-          <Input label="E-mail:" type="email"/>
+        <form className="form" onSubmit={handleSubmit}>
+          <Input label="E-mail:" type="email" onChange={(e) => setEmail(e.target.value) }/>
           <Input label="Senha:" type="password"/>
           <Button label="Login" />
+          <br /> 
+          {/* SIM EU USEI UM FUCKING BR PRA ABRIR ESPAÇO ASDLKJFASKFJSKLFJLSDÇ */}
+          <Button label="Login com Google" onClick={(e) => {e.preventDefault(); signInWithGoogle(router)}} />
           <a className="signup" href="/cadastro">Primeira vez por aqui? Cadastre-se</a>
         </form>
       </div>
     </>
   );
 }
-
-{/* <style jsx>{`
-.signup_form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input_group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.label {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-
-.button {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: #34cb79;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-`}</style> */}

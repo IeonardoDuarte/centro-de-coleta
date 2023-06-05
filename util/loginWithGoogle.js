@@ -9,13 +9,10 @@ export const signInWithGoogle = async (router) => {
 
   try {
     const res = await signInWithPopup(auth, provider);
-    console.debug("res", res);
     const uid = res.user.uid;
 
     const docRef = doc(db, "users", uid);
     const docSnap = await getDoc(docRef);
-
-    console.debug("docSnap", docSnap);
 
     if (!docSnap.exists() || !docSnap.data().acceptedTermsAndConditions) {
       await setDoc(docRef, {
@@ -23,15 +20,12 @@ export const signInWithGoogle = async (router) => {
         acceptedTermsAndConditions: false,
       });
 
-      // Puxar a página de cadastro com os dados do usuário
-      // avisar que ele precisa terminar o cadastro.
-
       sessionStorage.setItem("uid", uid);
       sessionStorage.setItem("email", res.user.email);
 
       router.push("/cadastro");
     } else {
-      console.debug("existing user");
+      router.push("/agendamento");
     }
   } catch (error) {
     console.error(error);

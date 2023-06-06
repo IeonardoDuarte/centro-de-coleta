@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
 import SelectInput from "../SelectInput";
 import { citySelect, stateSelect } from "@/data/scheduling/formsData";
+import DatePickerInput from "../DatePickerInput";
 
 export default function SchedulingForm() {
   const [state, setState] = useState(0);
@@ -47,10 +48,7 @@ export default function SchedulingForm() {
           <RadioInputGroup />
           <Input label="CEP:" />
           <Input label="Endereço:" />
-          <div className="date_picker">
-            <label for="pickupDate">Data da coleta:</label>
-            <input type="date" id="pickupDate" name="pickupDate"></input>
-          </div>
+          <DatePickerInput label="Data: " />
           <p>Nosso carro da coleta passará em sua casa entre as 9h e 12h.</p>
           <br/>
           <Button label="Agendar" onClick={(e) => {e.preventDefault()}}/>

@@ -9,8 +9,13 @@ import { db, initFirebase } from "../../../firebase";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
+import SelectInput from "../SelectInput";
+import { citySelect, stateSelect } from "@/data/scheduling/formsData";
 
 export default function SchedulingForm() {
+  const [state, setState] = useState(0);
+  const [city, setCity] = useState(null);
+
   const router = useRouter();
   initFirebase();
   const auth = getAuth();
@@ -30,34 +35,18 @@ export default function SchedulingForm() {
     });
   }, []);
 
-  if (!user) router.push("/login");
+  // if (!user) router.push("/login");
 
   return (
     <>
       <div className="scheduling_form">
-        <h1 className="title">Agendamento de {user.name}</h1>
+        <h1 className="title">Agendamento de {user ? user.name : "sem nome"}</h1>
         <form className="form">
+          <SelectInput label="Estado:" options={stateSelect} onChange={(e) => setState(e.target.value)}/>
+          <SelectInput label="Cidade:" options={citySelect[state]} onChange={(e) => setCity(e.target.value)}/>
           <RadioInputGroup />
           <Input label="CEP:" />
           <Input label="Endereço:" />
-          <div className="select">
-            <label className="label">Estado</label>
-            <select className="input">
-              <option value="0">Selecione um estado</option>
-              <option value="1">São Paulo</option>
-              <option value="2">Rio de Janeiro</option>
-              <option value="3">Minas Gerais</option>
-            </select>
-          </div>
-          <div className="select">
-            <label className="label">Cidade</label>
-            <select className="input">
-              <option value="0">Selecione uma cidade</option>
-              <option value="1">São Paulo</option>
-              <option value="2">Rio de Janeiro</option>
-              <option value="3">Minas Gerais</option>
-            </select>
-          </div>
           <div className="date_picker">
             <label for="pickupDate">Data da coleta:</label>
             <input type="date" id="pickupDate" name="pickupDate"></input>

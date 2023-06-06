@@ -1,3 +1,5 @@
+import './styles.css';
+
 export default function DatePickerInput({ label, onChange}) {
   return (
     <div className="date_picker">

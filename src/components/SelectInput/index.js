@@ -1,3 +1,5 @@
+import "./styles.css";
+
 export default function SelectInput({ label, options, onChange }) {
   return (
     <div className="select">

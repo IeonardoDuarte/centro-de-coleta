@@ -31,17 +31,17 @@ export default function SchedulingForm() {
         setUser(docSnap.data());
       } else {
         setUser(null);
-        auth.logout();
+        auth.signOut();
+        router.push("/login");
       }
     });
   }, []);
 
-  // if (!user) router.push("/login");
-
   return (
     <>
+      <button className="back_button" onClick={() => auth.signOut()}>Sair</button>
       <div className="scheduling_form">
-        <h1 className="title">Agendamento de {user ? user.name : "sem nome"}</h1>
+        <h1 className="title">Agendamento de [{user ? user.name : "not logged"}]</h1>
         <form className="form">
           <SelectInput label="Estado:" options={stateSelect} onChange={(e) => setState(e.target.value)}/>
           <SelectInput label="Cidade:" options={citySelect[state]} onChange={(e) => setCity(e.target.value)}/>

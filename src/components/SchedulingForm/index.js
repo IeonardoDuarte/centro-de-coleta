@@ -62,7 +62,9 @@ export default function SchedulingForm() {
             <label for="pickupDate">Data da coleta:</label>
             <input type="date" id="pickupDate" name="pickupDate"></input>
           </div>
-          <Button label="Agendar" onClick={() => auth.lo}/>
+          <p>Nosso carro da coleta passará em sua casa entre as 9h e 12h.</p>
+          <br/>
+          <Button label="Agendar" onClick={(e) => {e.preventDefault()}}/>
         </form>
       </div>
     </>

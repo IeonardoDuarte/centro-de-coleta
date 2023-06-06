@@ -5,8 +5,9 @@ export default function SelectInput({ label, options, onChange }) {
     <div className="select">
       <label className="label">{label}</label>
       <select className="input" onChange={onChange}>
-        {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+        <option disabled selected>Selecione uma opção</option>
+        {options.map((option, index) => (
+          <option key={`${index} - ${option.value}`} value={option.value}>{option.label}</option>
         ))}
       </select>
     </div>

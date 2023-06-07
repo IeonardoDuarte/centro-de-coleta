@@ -1,12 +1,12 @@
-import LoginForm from "@/components/LoginForm";
 import Footer from "@/components/Footer";
+import Contato from "@/components/Contato";
 import Navbar from "@/components/Navbar";
 
-export default function Login() {
+export default function contato() {
   return (
     <>
       <Navbar />
-      <LoginForm />
+      <Contato />
       <Footer />
     </>
   )

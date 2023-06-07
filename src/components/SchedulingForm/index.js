@@ -21,14 +21,16 @@ export default function SchedulingForm() {
   const [user , setUser] = useState(null);
   const [uid, setUid] = useState(null);
 
-  const [state, setState] = useState(0);
-  const [city, setCity] = useState('');
-  const [collectType, setCollectType] = useState('');
-  const [cep, setCep] = useState('');
-  const [address, setAddress] = useState('');
-  const [pickupDate, setPickupDate] = useState('');
+  const [state, setState] = useState(null);
+  const [city, setCity] = useState(null);
+  const [collectType, setCollectType] = useState(null);
+  const [cep, setCep] = useState(null);
+  const [address, setAddress] = useState(null);
+  const [pickupDate, setPickupDate] = useState(null);
 
-  const [scheduleData, setScheduleData] = useState('');
+
+  const [scheduleData, setScheduleData] = useState(null);
+  const [scheduled, setScheduled] = useState(false);
 
   useEffect(() => {
     setScheduleData({
@@ -58,23 +60,22 @@ export default function SchedulingForm() {
     });
   }, []);
 
-  return (
-    <>
+  return scheduled ? <h1>Agendamento realizado com sucesso!</h1> : 
+    (<>
       <button className="back_button" onClick={() => auth.signOut()}>Sair</button>
       <div className="scheduling_form">
         <h1 className="title">Agendamento de [{user ? user.name : "not logged"}]</h1>
         <form className="form">
           <SelectInput label="Estado:" options={stateSelect} onChange={(e) => setState(e.target.value)}/>
-          <SelectInput label="Cidade:" options={citySelect[state]} onChange={(e) => setCity(e.target.value)}/>
+          <SelectInput label="Cidade:" options={state ? citySelect[state] : []} onChange={(e) => setCity(e.target.value)}/>
           <RadioInputGroup onChange={(e) => setCollectType(e.target.value)} />
           <Input label="CEP:" onChange={(e) => setCep(e.target.value)}/>
           <Input label="Endereço:" onChange={(e) => setAddress(e.target.value)}/>
           <DatePickerInput label="Data: " onChange={(e) => setPickupDate(e.target.value)}/>
           <p>Nosso carro da coleta passará em sua casa entre as 9h e 12h.</p>
           <br/>
-          <Button label="Agendar" onClick={(e) => {e.preventDefault(); handleScheduleSubmit(scheduleData)}}/>
+          <Button label="Agendar" onClick={(e) => {e.preventDefault(); handleScheduleSubmit(scheduleData, () => {setScheduled(true)})}}/>
         </form>
       </div>
-    </>
-  )
+    </>)
 }

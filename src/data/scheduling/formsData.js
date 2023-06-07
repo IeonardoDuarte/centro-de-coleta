@@ -23,4 +23,9 @@ const citySelect = [
   ],
 ]
 
-export { stateSelect, citySelect };
+const collectType = [
+  { alimentos: 'Alimentos' },
+  { reciclavel: 'Reciclável' },
+];
+
+export { stateSelect, citySelect, collectType };

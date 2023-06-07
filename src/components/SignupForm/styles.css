@@ -25,3 +25,8 @@
 .checkbox input {
   margin-right: 0.5rem;
 }
+
+.terms a {
+  color: #007dbb;
+  text-decoration: none;
+}

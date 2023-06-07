@@ -1,12 +1,12 @@
-import LoginForm from "@/components/LoginForm";
+import PolicyCookies from "@/components/PolicyCookies";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-export default function Login() {
+export default function cookies() {
   return (
     <>
       <Navbar />
-      <LoginForm />
+      <PolicyCookies />
       <Footer />
     </>
   )

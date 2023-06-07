@@ -1,12 +1,12 @@
-import LoginForm from "@/components/LoginForm";
 import Footer from "@/components/Footer";
+import PolicyPrivacy from "@/components/PolicyPrivacy";
 import Navbar from "@/components/Navbar";
 
-export default function Login() {
+export default function privacidade() {
   return (
     <>
       <Navbar />
-      <LoginForm />
+      <PolicyPrivacy />
       <Footer />
     </>
   )

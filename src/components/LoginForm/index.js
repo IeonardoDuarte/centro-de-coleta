@@ -20,12 +20,15 @@ export default function LoginForm() {
       <div className="login_form">
         <h1 className="title">Login</h1>
         <form className="form" onSubmit={handleSubmit}>
-          <Input label="E-mail:" type="email" onChange={(e) => setEmail(e.target.value) }/>
-          <Input label="Senha:" type="password"/>
+          <Input label="E-mail:" type="email" onChange={(e) => setEmail(e.target.value)} />
+          <Input label="Senha:" type="password" />
           <Button label="Login" />
-          <br /> 
+          <br />
           {/* SIM EU USEI UM FUCKING BR PRA ABRIR ESPAÇO ASDLKJFASKFJSKLFJLSDÇ */}
-          <Button label="Login com Google" onClick={(e) => {e.preventDefault(); signInWithGoogle(router)}} />
+          <button className="btn" onClick={(e) => { e.preventDefault(); signInWithGoogle(router) }}>
+            <i className="fab fa-google"></i>
+            Login com o Google
+          </button>
           <a className="signup" href="/cadastro">Primeira vez por aqui? Cadastre-se</a>
         </form>
       </div>

@@ -14,7 +14,7 @@ export default function SchedulingForm() {
   const router = useRouter();
   initFirebase();
   const auth = getAuth();
-  const [user , setUser] = useState(auth.currentUser);
+  const [user, setUser] = useState(auth.currentUser);
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
@@ -62,7 +62,7 @@ export default function SchedulingForm() {
             <label for="pickupDate">Data da coleta:</label>
             <input type="date" id="pickupDate" name="pickupDate"></input>
           </div>
-          <Button label="Agendar" onClick={() => auth.lo}/>
+          <Button label="Agendar" onClick={() => auth.lo} />
         </form>
       </div>
     </>

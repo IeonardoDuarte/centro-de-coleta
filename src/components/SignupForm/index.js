@@ -20,12 +20,12 @@ export default function SignupForm() {
     const uid = sessionStorage.getItem("uid");
     const email = sessionStorage.getItem("email");
 
-    if (uid){
+    if (uid) {
       setUid(uid);
       sessionStorage.removeItem("uid");
     }
 
-    if (email){
+    if (email) {
       setEmail(email);
       sessionStorage.removeItem("email");
     }
@@ -53,16 +53,16 @@ export default function SignupForm() {
       <div className="signup_form">
         <h1 className="title">Cadastro</h1>
         <form className="form">
-          <Input label="Nome:" onChange={(e) => setName(e.target.value)}/>
-          <Input label="CPF:" onChange={(e) => setCPF(e.target.value)}/>
-          <Input label="E-mail:" type="email" value={email} onChange={() => {}}/>
-          {renderPassword && <Input label="Senha:" type="password"/>}
-          {renderPassword && <Input label="Repita a senha:" type="password"/>}
+          <Input label="Nome" onChange={(e) => setName(e.target.value)} />
+          <Input label="CPF" onChange={(e) => setCPF(e.target.value)} />
+          <Input label="E-mail" type="email" value={email} onChange={() => { }} />
+          {renderPassword && <Input label="Senha" type="password" />}
+          {renderPassword && <Input label="Repita a senha" type="password" />}
           <div className="input_group checkbox">
-            <input className="input" type="checkbox" onChange={(e) => setAcceptedTermsAndConditions(e.target.checked)}/>
-            <label className="label">Eu li e concordo com os termos de uso e política de privacidade.</label>
+            <input type="checkbox" onChange={(e) => setAcceptedTermsAndConditions(e.target.checked)} />
+            <label className="label terms">Eu li e concordo com os <a href="/termos-condicoes">Termos de Uso</a> e <a href="/politica-privacidade">Política de Privacidade</a> </label>
           </div>
-          <Button label="Cadastrar" onClick={handleSubmit}/>
+          <Button label="Cadastrar" onClick={handleSubmit} />
         </form>
       </div>
     </>

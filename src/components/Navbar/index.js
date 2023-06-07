@@ -1,16 +1,14 @@
-import Image from "next/image";
 import "./styles.css";
 
 export default function Navbar() {
   return (
     <>
-      <nav className="nav_bar">
-        <div className="brand">
-          <a className="link">
-            <Image src="Logo.svg" width={45} height={45} alt="Icone do centro de coleta sustentável" />
-            <span className="title">Centro de coleta sustentável</span>
-          </a>  
-        </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+      <nav class="navbar">
+        <a class="home-btn" href="/">
+          <i class="fas fa-recycle"></i>
+          <span>DOE AGORA</span>
+        </a>
       </nav>
     </>
   )

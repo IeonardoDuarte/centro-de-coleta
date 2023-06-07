@@ -1,15 +1,40 @@
-.nav_bar{
-  border-bottom: 1px solid #e5e5e5;
-  padding: 20px 20px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.brand {
+.navbar {
+  background-color: green;
+  height: 80px;
   display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex-grow: 1;
 }
 
-.link{}
+.home-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+}
 
-.title {
-  font-size: 1.5em;
-  margin-left: 16px;
+.home-btn:hover {
+  transform: scale(1.2);
+}
+
+.home-btn i {
+  margin-right: 8px;
+}
+
+.home-btn span {
+  display: inline-block;
+}
+
+.home-btn {
+  position: absolute;
+  left: 20px;
 }

@@ -1,4 +1,3 @@
-
 .login_form {
   width: 100%;
   max-width: 400px;
@@ -17,7 +16,9 @@
   flex-direction: column;
 }
 
-.signup{
-  margin-top: 1rem;
+.signup {
+  margin: 1rem auto 27.7vh;
   text-align: center;
+  text-decoration: none;
+  color: #037
 }

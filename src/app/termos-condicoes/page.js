@@ -1,12 +1,12 @@
-import LoginForm from "@/components/LoginForm";
 import Footer from "@/components/Footer";
+import TermsConditions from "@/components/TermsConditions";
 import Navbar from "@/components/Navbar";
 
-export default function Login() {
+export default function termos() {
   return (
     <>
       <Navbar />
-      <LoginForm />
+      <TermsConditions />
       <Footer />
     </>
   )

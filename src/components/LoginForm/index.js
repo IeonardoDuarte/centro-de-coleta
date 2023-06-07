@@ -12,7 +12,6 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
   }
 
   return (
@@ -23,7 +22,7 @@ export default function LoginForm() {
           <Input label="E-mail:" type="email" onChange={(e) => setEmail(e.target.value) }/>
           <Input label="Senha:" type="password"/>
           <Button label="Login" />
-          <br /> 
+          <br />
           {/* SIM EU USEI UM FUCKING BR PRA ABRIR ESPAÇO ASDLKJFASKFJSKLFJLSDÇ */}
           <Button label="Login com Google" onClick={(e) => {e.preventDefault(); signInWithGoogle(router)}} />
           <a className="signup" href="/cadastro">Primeira vez por aqui? Cadastre-se</a>

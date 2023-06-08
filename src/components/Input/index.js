@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export default function Input({ label, type = "text", onChange, value, readonly = false }) {
+export default function Input({ label, type = "text", onChange, value, readonly=false }) {
   return (
     <>
       <div className="input_group">

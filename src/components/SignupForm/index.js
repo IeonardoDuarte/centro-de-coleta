@@ -97,6 +97,22 @@ export default function SignupForm() {
             </>
           )}
           <br /><br />
+          {uid && (
+            <>
+            {/* KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK */}
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+            </>
+            )}
         </form>
       </div>
     </>

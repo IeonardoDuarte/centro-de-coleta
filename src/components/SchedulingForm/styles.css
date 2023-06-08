@@ -1,3 +1,23 @@
+.back_button {
+  background-color: #DC3545; /* Cor de fundo vermelho */
+  color: #FFFFFF; /* Cor do texto branco */
+  border: none; /* Remove as bordas padrões */
+  padding: 10px 20px; /* Adiciona padding ao botão */
+  cursor: pointer; /* Altera o cursor para um ponteiro ao passar o mouse sobre o botão */
+  font-weight: bold; /* Deixa o texto em negrito */
+  border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+  margin: 10px 0; /* Adiciona uma margem ao botão */
+  text-transform: uppercase; /* Transforma o texto em letras maiúsculas */
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+.back_button:hover {
+  background-color: #C82333; /* Altera a cor de fundo quando o mouse passa sobre o botão */
+}
+
+
 .scheduling_form {
   width: 100%;
   max-width: 400px;
@@ -14,4 +34,11 @@
 .form {
   display: flex;
   flex-direction: column;
+}
+
+.user_name {
+  color: #008000;  /* Altere para qualquer cor que preferir */
+  font-size: 24px;  /* Altere o tamanho da fonte se necessário */
+  font-weight: bold;  /* Deixa o texto em negrito */
+  text-transform: uppercase;  /* Transforma o texto em letras maiúsculas */
 }

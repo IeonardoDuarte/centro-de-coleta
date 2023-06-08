@@ -87,12 +87,16 @@ export default function SignupForm() {
             <label className="label terms">Eu li e concordo com os <a href="/termos-condicoes">Termos de Uso</a> e <a href="/politica-privacidade">Política de Privacidade</a> </label>
           </div>
           {!uid && (
-            <button className="btn" onClick={(e) => { e.preventDefault(); signInWithGoogle(router, () => setIsSigningUpWithGoogle(true))}}>
-              <i className="fab fa-google"></i>
-              Login com o Google
-            </button>
+            <>
+              <button className="btn" onClick={(e) => { e.preventDefault(); signInWithGoogle(router, () => setIsSigningUpWithGoogle(true))}}>
+                <i className="fab fa-google"></i>
+                Login com o Google
+              </button>
+              <br />
+            </>
           )}
           <Button label="Cadastrar" onClick={handleSubmit} />
+          <br /><br />
         </form>
       </div>
     </>

@@ -19,5 +19,13 @@ export default async function handleSignUp(userInfo, router) {
     });
   } else {
     console.log("Document doesn't exist");
+
+    await setDoc(docRef, {
+      ...userInfo,
+    })
+    .then(() => {
+      console.log("Document successfully written!");
+      router.push("/agendamento");
+    })
   }
 }

@@ -7,7 +7,7 @@ export default function Navbar() {
       <nav className="navbar">
         <a className="home-btn" href="/">
           <i className="fas fa-recycle"></i>
-          <span>DOE AGORA</span>
+          <span>Centro de Coleta Sustentável</span>
         </a>
       </nav>
     </>

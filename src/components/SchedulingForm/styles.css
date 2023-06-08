@@ -13,6 +13,14 @@
   right: 40px;
 }
 
+.success {
+  text-align: center; /* Centraliza o texto */
+  color: #28a745; /* Cor do texto - verde */
+  font-size: 2em; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  padding: 50px 0; /* Adiciona padding ao topo e ao fundo */
+}
+
 .back_button:hover {
   background-color: #C82333; /* Altera a cor de fundo quando o mouse passa sobre o botão */
 }

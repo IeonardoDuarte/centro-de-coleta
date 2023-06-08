@@ -60,7 +60,7 @@ export default function SchedulingForm() {
     });
   }, []);
 
-  return scheduled ? <h1>Agendamento realizado com sucesso!</h1> :
+  return scheduled ? <h1 className="success">Agendamento realizado com sucesso!</h1> :
     (<>
       <button className="back_button" onClick={() => auth.signOut()}>Sair</button>
       <div className="scheduling_form">

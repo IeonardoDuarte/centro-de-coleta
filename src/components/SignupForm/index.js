@@ -86,13 +86,33 @@ export default function SignupForm() {
             <input type="checkbox" onChange={(e) => setAcceptedTermsAndConditions(e.target.checked)} />
             <label className="label terms">Eu li e concordo com os <a href="/termos-condicoes">Termos de Uso</a> e <a href="/politica-privacidade">Política de Privacidade</a> </label>
           </div>
-          {!uid && (
-            <button className="btn" onClick={(e) => { e.preventDefault(); signInWithGoogle(router, () => setIsSigningUpWithGoogle(true))}}>
-              <i className="fab fa-google"></i>
-              Login com o Google
-            </button>
-          )}
           <Button label="Cadastrar" onClick={handleSubmit} />
+          {!uid && (
+            <>
+              <br />
+              <button className="btn" onClick={(e) => { e.preventDefault(); signInWithGoogle(router, () => setIsSigningUpWithGoogle(true))}}>
+                <i className="fab fa-google"></i>
+                Login com o Google
+              </button>
+            </>
+          )}
+          <br /><br />
+          {uid && (
+            <>
+            {/* KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK */}
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+            </>
+            )}
         </form>
       </div>
     </>

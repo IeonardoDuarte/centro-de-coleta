@@ -63,7 +63,7 @@ export default function Dashboard() {
               <td>{item.data().name}</td>
               <td>{item.data().CPF}</td>
               <td>{convertDate(item.data().pickupDate)}</td>
-              <td>{collectType[item.data().collectType]}</td>
+              <td>{item.data().collectType == 'reciclavel' ? "Reciclável" : "Alimentos"}</td>
             </tr>
           )}
         </tbody>
@@ -74,7 +74,7 @@ export default function Dashboard() {
             <li className="modal__list__item">Nome: {selectedSchedule.name}</li>
             <li className="modal__list__item">CPF: {selectedSchedule.CPF}</li>
             <li className="modal__list__item">Data de retirada: {convertDate(selectedSchedule.pickupDate)}</li>
-            <li className="modal__list__item">Tipo de coleta: {selectedSchedule.collectType}</li>
+            <li className="modal__list__item">Tipo de coleta: {selectedSchedule.collectType == 'reciclavel' ? "Reciclável" : "Alimentos"}</li>
             <li className="modal__list__item">Estado: {stateSelect[selectedSchedule.state].label}</li>
             <li className="modal__list__item">Cidade: {citySelect[selectedSchedule.state][selectedSchedule.city].label}</li>
             <li className="modal__list__item">Endereço: {selectedSchedule.address}</li>

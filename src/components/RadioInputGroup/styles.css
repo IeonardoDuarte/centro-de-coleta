@@ -1,3 +1,9 @@
-.input_group{
-  margin: 24px 0;
+.radio_group{
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.radio_input{
+  margin-bottom: 3px;
 }

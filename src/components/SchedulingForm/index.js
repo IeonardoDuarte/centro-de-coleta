@@ -60,11 +60,11 @@ export default function SchedulingForm() {
     });
   }, []);
 
-  return scheduled ? <h1>Agendamento realizado com sucesso!</h1> : 
+  return scheduled ? <h1 className="success">Agendamento realizado com sucesso!</h1> :
     (<>
       <button className="back_button" onClick={() => auth.signOut()}>Sair</button>
       <div className="scheduling_form">
-        <h1 className="title">Agendamento de [{user ? user.name : "not logged"}]</h1>
+        <h1 className="title">Agendamento de <br /> <span className="user_name">{user ? user.name : "not logged"}</span></h1>
         <form className="form">
           <SelectInput label="Estado:" options={stateSelect} onChange={(e) => setState(e.target.value)}/>
           <SelectInput label="Cidade:" options={state ? citySelect[state] : []} onChange={(e) => setCity(e.target.value)}/>
@@ -72,7 +72,7 @@ export default function SchedulingForm() {
           <Input label="CEP:" onChange={(e) => setCep(e.target.value)}/>
           <Input label="Endereço:" onChange={(e) => setAddress(e.target.value)}/>
           <DatePickerInput label="Data: " onChange={(e) => setPickupDate(e.target.value)}/>
-          <p>Nosso carro da coleta passará em sua casa entre as 9h e 12h.</p>
+          <p>*Nosso carro da coleta passará em sua casa entre as 9h e 12h.</p>
           <br/>
           <Button label="Agendar" onClick={(e) => {e.preventDefault(); handleScheduleSubmit(scheduleData, () => {setScheduled(true)})}}/>
         </form>

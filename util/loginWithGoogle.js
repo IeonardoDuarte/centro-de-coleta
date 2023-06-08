@@ -1,8 +1,8 @@
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';	
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { db, initFirebase } from '../firebase';
 
-export const signInWithGoogle = async (router) => {
+export const signInWithGoogle = async (router, signUpTrigger) => {
   initFirebase();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -23,6 +23,7 @@ export const signInWithGoogle = async (router) => {
       sessionStorage.setItem("uid", uid);
       sessionStorage.setItem("email", res.user.email);
 
+      signUpTrigger();
       router.push("/cadastro");
     } else {
       router.push("/agendamento");
